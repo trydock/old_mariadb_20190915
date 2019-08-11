@@ -10,5 +10,6 @@ ENV DB_PORT "3306"
 ENV MAX_ALLOWED_PACKET "200M"
 RUN echo "Installing Mariadb" && \
     apk add --no-cache mariadb mariadb-client mariadb-server-utils bash vim pwgen
+ADD manage.sh /manage.sh
 EXPOSE $DB_PORT
 ENTRYPOINT ["/manage.sh"]
