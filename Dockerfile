@@ -12,4 +12,5 @@ RUN echo "Installing Mariadb" && \
     apk add --no-cache mariadb mariadb-client mariadb-server-utils bash vim pwgen
 ADD manage.sh /manage.sh
 EXPOSE $DB_PORT
+RUN chmod 755 /manage.sh
 ENTRYPOINT ["/manage.sh"]
